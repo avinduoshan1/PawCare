@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing</title>
+    <link rel="stylesheet" href="price.css">
+</head>
+<body>
+    <section class="service-section">
+        <div class="service-container">
+            <!-- Pet Daycare -->
+            <div class="service-items">
+                <div class="service-contents">
+                    <h2>Pet Daycare</h2>
+                    <p>Give your pet a fun-filled day with supervised play, exercise, and socialization in our safe and spacious facility.</p>
+                    <ul class="service-feature">
+                        <li>Individual attention and care</li>
+                        <li>Spacious play areas</li>
+                        <li>Regular exercise sessions</li>
+                        <li>Supervised group activities</li>
+                    </ul>
+                    <div class="pricings">
+                        <h3>Pricing</h3>
+                        <label><input type="radio" name="pet-daycare" value="Full Day: Rs.5000"> Full Day: Rs.5000</label><br>
+                        <label><input type="radio" name="pet-daycare" value="Half Day: Rs.2500"> Half Day: Rs.2500</label><br>
+                        <label><input type="radio" name="pet-daycare" value="Weekly Package: Rs.30000"> Weekly Package: Rs.30000</label>
+                    </div>
+                    <button class="checkout-btn" onclick="checkout(this)">Checkout</button>
+                </div>
+            </div>
+
+            <!-- Professional Grooming -->
+            <div class="service-items">
+                <div class="service-contents">
+                    <h2>Professional Grooming</h2>
+                    <p>Our experienced groomers provide complete grooming services to keep your pet clean and healthy.</p>
+                    <ul class="service-feature">
+                        <li>Bath and brush out</li>
+                        <li>Nail trimming</li>
+                        <li>Ear cleaning</li>
+                        <li>Style cuts and trimming</li>
+                    </ul>
+                    <div class="pricings">
+                        <h3>Pricing</h3>
+                        <label><input type="radio" name="pet-grooming" value="Basic Grooming: Rs.8000"> Basic Grooming: Rs.8000</label><br>
+                        <label><input type="radio" name="pet-grooming" value="Full Service: Rs.15000"> Full Service: Rs.15000</label><br>
+                        <label><input type="radio" name="pet-grooming" value="Specialty Cuts: Rs.14000+"> Specialty Cuts: Rs.14000+</label>
+                    </div>
+                    <button class="checkout-btn" onclick="checkout(this)">Checkout</button>
+                </div>
+            </div>
+
+            <!-- Pet Training -->
+            <div class="service-items">
+                <div class="service-contents">
+                    <h2>Pet Training</h2>
+                    <p>Professional training programs to help your pet develop good behavior and social skills.</p>
+                    <ul class="service-feature">
+                        <li>Basic obedience training</li>
+                        <li>Behavior modification</li>
+                        <li>Puppy training classes</li>
+                        <li>Private sessions available</li>
+                    </ul>
+                    <div class="pricings">
+                        <h3>Pricing</h3>
+                        <label><input type="radio" name="pet-training" value="Group Classes: Rs.20000/6 weeks"> Group Classes: Rs.20000/6 weeks</label><br>
+                        <label><input type="radio" name="pet-training" value="Private Session: Rs.14000/hour"> Private Session: Rs.14000/hour</label><br>
+                        <label><input type="radio" name="pet-training" value="Puppy Package: Rs.30000"> Puppy Package: Rs.30000</label>
+                    </div>
+                    <button class="checkout-btn" onclick="checkout(this)">Checkout</button>
+                </div>
+            </div>
+
+            <!-- Veterinary Care -->
+            <div class="service-items">
+                <div class="service-contents">
+                    <h2>Veterinary Care</h2>
+                    <p>Comprehensive medical care for your pet's health and well-being.</p>
+                    <ul class="service-feature">
+                        <li>Regular check-ups</li>
+                        <li>Vaccinations</li>
+                        <li>Emergency care</li>
+                        <li>Dental services</li>
+                    </ul>
+                    <div class="pricings">
+                        <h3>Pricing</h3>
+                        <label><input type="radio" name="vet-care" value="Basic Check-up: Rs.10000"> Basic Check-up: Rs.10000</label><br>
+                        <label><input type="radio" name="vet-care" value="Vaccination: Rs.7000+"> Vaccination: Rs.7000+</label><br>
+                        <label><input type="radio" name="vet-care" value="Dental Cleaning: Rs.30000+"> Dental Cleaning: Rs.30000+</label>
+                    </div>
+                    <button class="checkout-btn" onclick="checkout(this)">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function checkout(button) {
+    var serviceItem = button.closest('.service-items');
+    var selectedOption = serviceItem.querySelector('input[type="radio"]:checked');
+
+    if (selectedOption) {
+        window.location.href = "payment.html";
+        selectedOption.checked = false;
+    } else {
+        alert("Please select a pricing option before checking out.");
+    }
+}
+
+    </script>
+    
+</body>
+</html>
